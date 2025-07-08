@@ -38,21 +38,7 @@ java:
         receipt.calculateinvoice(customer, cart, shippingFees, totalAmount);
 
    Console Output:
-**Shipping Notice**
-2x Cheddar Cheese     0.4kg
-1x Samsung TV     5.0kg
-Total package weight: 5.4kg
-
-**Checkout Receipt**
-2 x Cheddar Cheese = 200.0
-1 x Samsung TV = 200.0
-1 x Digestive Biscuits = 150.0
-1 x Orange Card = 50.0
-1 x iPhone13 = 500.0
-Subtotal: 1100.0
-Shipping: 270.0
-Amount: 1370.0
-Balance: 3630.0
+![Main](Screenshot%20(169).png)
 
 
 -Example 2:(TVs are out of stock)
@@ -96,19 +82,8 @@ Customer customer = new Customer("Maroska", 5000);
         receipt.calculateinvoice(customer, cart, shippingFees, totalAmount);
         
 console output:
-Samsung TV quantity is not available at stock!
- **Shipping Notice**
-2x Cheddar Cheese     0.4kg
-total package weight:0.4
-**Checkout Receipt**
-2 x Cheddar Cheese= 200.0
-1 x Digestive Biscuits= 150.0
-1 x Orange Card= 50.0
-1 x iPhone13= 500.0
-Subtotal: 900.0
-Shipping: 20.0
-Amount: 920.0
-Balance:4080.0
+![Main](Screenshot%20(170).png)
+
 
 
 -Example 3:(empty card)
@@ -148,7 +123,7 @@ java:
         receipt.calculateinvoice(customer, cart, shippingFees, totalAmount);
         
     console output:
-    Checkout error:can't checkout due to empty card!
+![Main](Screenshot%20(171).png)
 
 
    - Example 4(Insufficient Balance Exception):
@@ -193,11 +168,8 @@ java:
         receipt.calculateinvoice(customer, cart, shippingFees, totalAmount);
 
     console output:
-     **Shipping Notice**
-2x Cheddar Cheese     0.4kg
-1x Samsung TV     5.0kg
-total package weight:5.4
-Payment error:insufficient balance!
+![Main](Screenshot%20(172).png)
+
 
 
 -Example 5(expired product):
@@ -236,10 +208,10 @@ Customer customer = new Customer("Maroska", 5000);
             System.out.println("Payment error:" + e.getMessage());
             return;
         }
-
+        
         Receipt receipt = new Receipt();
         double shippingFees = shipping.calculateFees(cart.getShipabbleItems());
         receipt.calculateinvoice(customer, cart, shippingFees, totalAmount);
 
       console output:
-      Checkout error:Cheddar Cheese is expired.
+![Main](Screenshot%20(173).png)
